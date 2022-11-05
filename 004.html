@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 4</title>
+    <style>
+    </style>
+</head>
+<body>
+    <p>Para mais informações e descrição dos exemplos, leia o código</p>
+    <h1>ONMOUSEOVER</h1>
+    <img onmouseover="ImgMax(this)" onmouseout="ImgNor(this)" border="0" src="https://66.media.tumblr.com/3b8022f11de5e422639f1f8a357dc87b/dee16849832871e8-f8/s250x400/0f88a8bc761881768b3c8afa1801a72eeeb3798a.gif" alt="hamster" width="340" height="400">
+    <br>
+    <p>Hamster fofo em uma colher, coloque o cursor sob o gif </p>
+
+    <div class="div-onfocus">
+        <h1>ONFOCUS</h1>
+        <p>Digite seu nome:</p>
+        <input type="text" onfocus="color_inp(this)">
+    </div>
+    
+   
+        <h1>ONCHANGE </h1>
+        <p>Você gosta de bolo? Escolha um sabor! </p>
+
+        <select id="cake_option" onchange="FucaoCh()">
+            <option value="morango">Morango</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="limao">Limão</option>
+        </select>
+        <p id="text"></p>
+
+    <script>
+        //ONMOUSEOVER
+
+        /* aqui usei o js para quando o cursor passar pelo gif, seu
+        tamanho aumentar, pra isso usei o function*/
+        function ImgMax(i){
+            i.style.height="570px";
+            i.style.width="510px";
+        }
+        /* aqui usei o js para quando o cursor estiver fora do gif, seu
+        tamanho continuar o mesmo, pra isso usei o function*/
+        function ImgNor(i){
+            i.style.height="400px";
+            i.style.width="340px";
+        }
+        //ONFOCUS
+
+        function color_inp(x){
+            x.style.background='blue'
+        }
+         /*  Aqui eu utilizei o js para que a cor do input mudasse ao ser clicado  */
+
+        //ONCHANGE
+
+        function FucaoCh(){
+            var sabor = document.getElementById("cake_option").value;
+
+            document.getElementById("text").innerHTML = "Oh, você gosta de " + sabor + "!";
+        }
+         /*  Aqui eu utilizei o js para quando o usuario informar o sabor de bolo que gosta, aparecer 
+         uma frase reafirmando o sabor informado! */
+
+    </script>
+</body>
+</html>
