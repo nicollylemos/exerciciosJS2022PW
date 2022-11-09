@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+    <style>
+        .exe-class{
+            width: 155px;
+            height: 30px;
+            padding: 7px;
+        }
+        .exemplo{
+            padding: 15px;
+            background-color: rgb(239, 255, 250);
+            border-radius: 8px;
+            width: 655px;
+        }
+        #sele-ex{
+            background-color: rgb(239, 239, 255);
+            border-radius: 10px;
+            width: 500px;
+            padding-left: 20px;
+            padding-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2> Trabalhando com dom!</h2>
+    <p> Todas as explicações e informações estão nos comentários do código, para facilitar <br>compreensão!
+        (Não foquei na parte visual para esse exercício)
+    </p>
+        <br>
+        Nesse exercício utilizei o dom para:
+        <br>
+        -Modificando suas cores, fontes e tamanhos de letra;
+        <br>
+        -Copiar texto em formatação HTML;
+        <br>
+        -Mudando a cor de fundo (background);
+
+    <div id="sele-ex">
+        <div class="exemplo-1">   
+            <h1 id="exe-1"><br>Exemplo para ID</h1>
+        </div>
+        <div class="exemplo-2">
+            <h3>Exemplo 2</h3>
+            <h3><br>Exemplo 2 </h3>
+        </div>
+        <div class="exemplo-2">
+            <div class="exe-class">Exemplo 3</div>
+            <div class="exe-class">Exemplo 3</div>    
+        </div>
+    </div>
+        
+
+
+   
+    <script>
+        // Por ID:
+        var id = document.getElementById('exe-1')
+        id.style.color='red'
+      
+        /*
+        Aqui usamos o Id para selecionar, e assim conseguimos mudar sua cor para vermelho!
+        retorna um elemento correspondente ao id passado como parâmetro (em formato string).
+        No entanto, caso mais de um elemento possua o id
+        passado como parâmetro, a função retorna o primeiro elemento encontrado.
+        */
+
+        // Por Tag Name:
+        var tags = document.getElementsByTagName('h3')[0];
+        tags.style.color='blue'
+        var tag = document.getElementsByTagName('h3')[1];
+        tag.style.color='green'
+        tag.style.font='normal 18pt Arial'
+        /*
+         Já com a Tag Name conseguimos selecionar uma tag! Usei o selecionador para aumentar o tamanho
+         modificar as cores e a fonte
+        esse seletor cria uma coleção com todas as tags com o mesmo nome. assim, caso não
+        exista nenhuma tag com o nome especificado, o retorno é uma HTML Collection vazia
+        */
+       
+        // Por Class Name:
+        
+        var ex_c = document.getElementsByClassName('exe-class')[0]
+        ex_c.style.background='red'
+        var ex_d = document.getElementsByClassName('exe-class')[1]
+        ex_d.style.background='blue'
+        ex_d.style.color='white'
+
+
+         /* Aqui selecionamos pelo class 
+         
+          essa função vai retornar os elementos que possuem 
+          uma mesma classe passada como parâmetro em formato string.*/
+
+         // Por querySelector:
+
+         var quer_sel = document.querySelector('h1#exe-1')
+         document.write(quer_sel.innerHTML)
+
+         /* Ele vai retornar o primeiro elemento que corresponde ao grupo 
+          especificado ao seletor */
+
+        // Por querySelectorAll:
+
+        var all_sel = document.querySelectorAll('h3')[1]
+        document.write(all_sel.innerHTML)
+        all_sel.style.background="pink"
+        all_sel.style.font='normal 30pt Arial'
+        all_sel.style.height= "150px";
+        all_sel.style.widht= "150px";
+        all_sel.style.padding= "5px";
+
+        
+           /*  Retorna uma lista de elementos presentes no documento (usando ordenação em profundidade, 
+        pré-ordenada e transversal dos nós do documento) que coincidam com o grupo de seletores
+        especificado. O objeto retornado é uma NodeList */
+
+        
+
+    </script>
+</body>
+</html>
