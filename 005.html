@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function(){
+
+    let bt= document.getElementsByTagName("button")[2];
+
+     bt[3].onclick = function(){
+         alert('Literal');
+     }
+
+    }
+
+    // função nomeada
+    function Func_Nome(){
+        alert("Função Nomeada");
+    }
+
+    // construtor 
+    let Fc = new Function (' alert("Construtor")');
+
+    // Arrow Fuction 
+
+     let Flecha =()=>{
+        alert("Func. Flecha");
+     }
+
+   
+        </script>
+    </head>
+    <body>
+
+    <h2> Função Nomeada</h2>
+    <button onclick="Func_Nome()"> Func. Nomeada </button>
+    <p>Se você quer se referir à função atual dentro do corpo da função, você terá que <br>
+     criar uma expressão de função nomeada. Este nome será local apenas para o corpo <br>(escopo) da função. Isto ainda evita
+     o uso da propriedade não-padronizada arguments.</p>
+    
+     <h2> Função Construtor</h2>
+    <button onclick="Fc()"> Func. Construtor </button>
+    <p>As funções construtoras em JavaScript são como as classes do Java, diferenciando apenas<br> pela sintaxe. Em questão de funcionamento, tanto funções contrutoras no JavaScript <br>quanto Classes no Java têm a mesma utilidade: servir de molde para a criação de objetos. </p>
+    
+    <h2> Funçaõ Flecha</h2>
+    <button onmouseover="Flecha()"> Func. Flecha</button>
+    <p>Uma expressão arrow function possui uma sintaxe mais curta quando comparada a uma <br>expressão de função (function expression) e não tem seu próprio this, arguments, super ou<br> new.target. Estas expressões de funções são melhor aplicadas para funções que não sejam<br> métodos, e elas não podem ser usadas como construtoras (constructors).</p>
+
+    <h2> Função Literal</h2>
+    <button> Func. Literal </button>
+    <p>"Literal" é um valor que você escreve literalmente no seu script, pode ser atribuindo a uma variável,<br> ou passando com argumento de uma função, ou até escrever solto no seu script, sem atribuir ou setar <br>nada, o que importa é que se escreve exatamente o que será o valor</p>
+</body>
+</html>
