@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulário</title>
+<style>
+div{
+    width: 485px;
+    margin: 0 auto;
+    padding:0 auto;
+    font-family:"Poppins", sans-serif;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 3);
+    max-width: 100%; 
+    overflow: hidden;
+}
+    
+
+#formu{
+    padding: 20px;
+}
+.input{
+    border: 2px solid #f0f0f0;
+    display: block;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+}
+.form-control #a{
+    position: relative;
+    visibility:hidden;
+    color:red;
+}
+.form-control #b{
+    position: relative;
+    visibility: hidden;
+    color:#51BF29;
+}
+.form-control #c{
+    position: relative;
+    visibility:hidden;
+    color:red;
+}
+.form-control #d{
+    position: relative;
+    visibility: hidden;
+    color:#51BF29;
+}
+.form-control #e{
+    position: relative;
+    visibility:hidden;
+    color:red;
+}
+.form-control #f{
+    position: relative;
+    visibility: hidden;
+    color:#51BF29;
+}
+.form-control #g{
+    position: relative;
+    visibility:hidden;
+    color:red;
+}
+.form-control #h{
+    position: relative;
+    visibility: hidden;
+    color:#51BF29;
+}
+.form-control {
+    margin-bottom: 10px;
+    padding-top: 20px;
+    position: relative;
+}
+#btId{
+    
+    padding:16px 0px;
+    margin: 25px;
+    border:none;
+    border-radius: 8px;
+    background: #fac86a;
+    text-decoration:none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #f3fbff;
+    padding: 14px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: 75px;
+}
+#btId:hover{
+    background: #e9af44 ;
+    color: #f3fbff;
+    text-decoration:none;
+}
+* {
+    box-sizing: border-box;
+}
+</style>
+<script src="../form.js"></script>
+</head>
+
+<body >
+    <div class="form-control">
+        <form id="formu" name="" action="proc.php" method="post"
+          onsubmit="return false">
+          <h1>Formulário</h1>
+            <table>
+                <tr>
+                    <td>Nome:</td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                       
+                        <input class="input" type="text" name="nome" id="nome" size="50"
+                        onBlur="campoNome()" value=""><br> <span></span> 
+                        <i id="a" class="fas fa-exclamation-circle"></i>
+                        <i id="b" class="fas fa-check-circle"></i>
+                      
+                    </td>
+                   
+                </tr>
+                <tr>
+                   
+                    <td><br>Email:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="input" type="text" name="email" id="email" size="50"  onblur="ValidarEmail(email)"><br><span></span>
+                        <i id="c" class="fas fa-exclamation-circle"></i>
+                        <i id="d" class="fas fa-check-circle"></i>
+                      
+                    </td>
+                </tr>
+                <tr>
+                    <td><br>CPF:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="input"  id="cpf" type="text" onkeyup="cpfCheck(this)" maxlength="18" onkeydown="javascript: fMasc( this, mCPF );"> <br><span id="cpfResponse"></span>
+                        <i id="e" class="fas fa-exclamation-circle"></i>
+                        <i id="f" class="fas fa-check-circle"></i>
+                      
+                    </td>
+                </tr>
+                <tr>
+                    <td><br>Telefone:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="input" type="text" name="tel" id="tel" size="14" maxlength="14" minlength="14" onchange="TelValida()" onkeypress="TelMascara()"><br><span></span>
+                        <i id="g" class="fas fa-exclamation-circle"></i>
+                        <i id="h" class="fas fa-check-circle"></i>
+                      
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><br>Escolha sua Fruta:</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="fruta" id="fruta" value="maça"> MAÇA<br>
+                        <input type="radio" name="fruta" id="fruta" value="banana"> BANANA<br>
+                        <input type="radio" name="fruta" id="fruta" value="pera">PERA<br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><br>Qual revista te interessa:</td>
+                </tr>
+                <tr>
+                    <td required="">
+                        <input type="checkbox" name="rev1" id="rev1" value="php"> PHP<br>
+                        <input type="checkbox" name="rev2" id="rev2" value="html"> HTML<br>
+                        <input type="checkbox" name="rev3" id="rev3" value="javascript">JavaScript<br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><br>Estado</td>
+
+                    </td>
+                <tr>
+                    <td>
+                        <select name="estado">
+                            <option value="estado">Selecione o Estado</option>
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="se">Sergipe</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="to">Tocantins</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><br><h3>Mensagem</h3></td>
+                </tr>
+                <tr>
+                    <td><textarea id="ms" name="ms" cols="50" rows="10"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <input type="submit" id="btId" value="Enviar">
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </div>
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
